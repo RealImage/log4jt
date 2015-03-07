@@ -33,6 +33,7 @@ func (log Logger) LoadConfiguration(filename string) {
 	log.Close()
 
 	// Open the configuration file
+	// TODO: Shouldn't this be closed?
 	fd, err := os.Open(filename)
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "LoadConfiguration: Error: Could not open %q for reading: %s\n", filename, err)
